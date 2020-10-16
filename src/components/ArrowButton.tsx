@@ -3,10 +3,10 @@ import { ArrowButtonProps } from '../types'
 import ButtonBox from './ButtonBox'
 import './ArrowButton.css'
 
-const ArrowButton: React.FunctionComponent<ArrowButtonProps> = ({ arrowType = 'up', onClick}) => {
+const ArrowButton: React.FunctionComponent<ArrowButtonProps> = ({ arrowType = 'up', onClick, buttonBoxStyle}) => {
   return (
-    <ButtonBox>
-      <button className={`arrow arrow-${arrowType}`} onClick={onClick} />
+    <ButtonBox buttonBoxStyle={buttonBoxStyle} onClick={onClick} >
+      <button className={`arrow arrow-${arrowType}`} />
     </ButtonBox>
   )
 }

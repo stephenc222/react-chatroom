@@ -5,20 +5,21 @@ import StatusDropdown from '../StatusDropdown'
 import Form from '../Form'
 import SubmitButton from '../SubmitButton'
 import './ChatBox.css'
-
+import { Message } from '../../types'
 
 const USER: string = 'jackAttack64'
 
 const ChatBox = () => {
   const [message, setMessage] = useState('')
   const [status, setStatus] = useState('Eating Pizza')
-  const [messageList, setMessageList] = useState([{ user: USER, text: 'This is a message'}])
+  const [messageList, setMessageList] = useState([] as Message[])
+
   const onSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault()
     if (!message) {
       return
     }
-    const nextMessageList = messageList.slice()
+    const nextMessageList: Message[] = messageList.slice()
     nextMessageList.push({ user: USER, text: message})
     setMessageList(nextMessageList)
     setMessage('')

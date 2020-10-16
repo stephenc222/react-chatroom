@@ -1,6 +1,8 @@
 .message-list-container {
   display: flex;
+  position: relative;
   flex-direction: row;
+  height: 100%;
   width: 100%;
 }
 
@@ -15,6 +17,8 @@
 .message-list-scrollbar {
   display: flex;
   position: relative;
+  flex-grow: 1;
+  height: 100%;
   flex-direction: column;
   background-color: #E5E5E5;
 }
