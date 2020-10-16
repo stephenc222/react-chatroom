@@ -1,0 +1,24 @@
+
+.button-box {
+  display: flex;
+  width: 35px;
+  height: 35px;
+  border-bottom: 2px solid #000000;
+  border-right: 2px solid #000000;
+}
+
+.button-box-content {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 2px solid #828282;
+  border-right: 2px solid #828282;
+  background: #E5E5E5;
+}
+.button-box-content-container {
+  display: flex;
+  flex-grow: 1;
+  border-top: 2px solid #ffffff;
+  border-left: 2px solid #ffffff;
+}

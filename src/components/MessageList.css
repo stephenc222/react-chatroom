@@ -1,0 +1,29 @@
+.message-list-container {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.message-list {
+  text-align: left;
+  height: 288px;
+  width: 100%;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+}
+.message-list-scrollbar {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  background-color: #E5E5E5;
+}
+
+.message-list--item {
+  padding-top: 12px;
+  padding-left: 8px;
+}
+
+.message-list--item span {
+  color: blue;
+}

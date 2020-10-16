@@ -1,0 +1,24 @@
+.arrow {
+  width: 15px;
+  height: 8px;
+  display: inline-block;
+  border: none;
+  margin-right: 27px;
+  margin: 0;
+  text-decoration: none;
+  background: url(../assets/SendProgressIcon.svg);
+  color: #ffffff;
+  font-family: sans-serif;
+  font-size: 1rem;
+  cursor: pointer;
+  text-align: center;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+.arrow-up {
+  background: url(../assets/UpTriangle.svg);
+}
+.arrow-down {
+  background: url(../assets/DownTriangle.svg);
+}
