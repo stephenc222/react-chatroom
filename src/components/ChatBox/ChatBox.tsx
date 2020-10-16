@@ -11,6 +11,7 @@ const USER: string = 'jackAttack64'
 
 const ChatBox = () => {
   const [message, setMessage] = useState('')
+  const [status, setStatus] = useState('Eating Pizza')
   const [messageList, setMessageList] = useState([{ user: USER, text: 'This is a message'}])
   const onSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault()
@@ -28,7 +29,7 @@ const ChatBox = () => {
   }
   return (
     <div className='chatbox-container'> 
-      <StatusDropdown onClick={onStatusDropdownClick} />
+      <StatusDropdown status={status} setStatus={setStatus} onClick={onStatusDropdownClick} />
       <MessageList messageList={messageList} />
       <Form onSubmit={onSubmit}>
         <MessageInput message={message} onChange={onChange}/>

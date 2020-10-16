@@ -2,9 +2,9 @@ import React from 'react'
 import { BoxProps } from '../types'
 import './Box.css'
 
-const Box: React.FunctionComponent<BoxProps> = ({children}) => {
+const Box: React.FunctionComponent<BoxProps> = ({children, boxStyle}) => {
   return (
-    <div className='box'>
+    <div style={boxStyle} className='box'>
       <div className='box-content'>
         {children}
       </div>

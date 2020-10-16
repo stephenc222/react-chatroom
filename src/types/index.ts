@@ -2,6 +2,7 @@
 export interface BoxProps {
   children?: React.ReactNode
   buttonBoxStyle?: React.CSSProperties
+  boxStyle?: React.CSSProperties
 }
 
 export interface ArrowButtonProps {
@@ -10,6 +11,8 @@ export interface ArrowButtonProps {
 }
 
 export interface StatusDropdownProps {
+  status: string
+  setStatus: React.Dispatch<React.SetStateAction<string>>
   onClick: (event: React.FormEvent<HTMLButtonElement>) => void
 }
 
