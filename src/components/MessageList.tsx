@@ -46,7 +46,6 @@ const MessageList: React.FunctionComponent<MessageListProps> = ({messageList}) =
       const { height: listHeight } = messageListRef.current?.getBoundingClientRect()
       setHeight(height)
       setPageSize(height)
-      console.log({what: Math.floor(listHeight / height) })
       setNumPages(Math.floor(listHeight / height))
     }
   }, [scrollBarRef, messageListRef, messageList])
