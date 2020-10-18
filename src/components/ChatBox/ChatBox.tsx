@@ -29,13 +29,20 @@ const ChatBox = () => {
     setMessage(event.target.value)
   }
   return (
-    <div className='chatbox-container'> 
-      <StatusDropdown status={status} setStatus={setStatus} onClick={onStatusDropdownClick} />
-      <MessageList messageList={messageList} />
-      <Form onSubmit={onSubmit}>
-        <MessageInput message={message} onChange={onChange}/>
-        <SubmitButton/>
-      </Form>
+    <div className='chatbox-container'>
+      <div className='logo-container'>
+        <span className='guy-logo'/>
+        <span id='lol-text'/>
+        <span id='instant-messenger-text'>Instant Messenger</span>
+      </div>
+      <div className='chatbox'> 
+        <StatusDropdown status={status} setStatus={setStatus} onClick={onStatusDropdownClick} />
+        <MessageList messageList={messageList} />
+        <Form onSubmit={onSubmit}>
+          <MessageInput message={message} onChange={onChange}/>
+          <SubmitButton/>
+        </Form>
+      </div>
     </div>
   )
 }
