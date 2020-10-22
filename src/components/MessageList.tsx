@@ -59,15 +59,14 @@ const MessageList: React.FunctionComponent<MessageListProps> = ({messageList}) =
     }
     if (page < numPages) {
       setPage(page + 1)
-      console.log({and: (height / numPages)})
-      const nextScrollPos = (height / numPages - BOX_HEIGHT) * (page + 1) + BOX_HEIGHT
+      const nextScrollPos = (BOX_HEIGHT * 0.4) * (page + 1) + BOX_HEIGHT
       setScrollPos(nextScrollPos)
     }
   }
   const onUpArrowClick = () => {
     if (page > 0) {
       setPage(page - 1)
-      setScrollPos((height / numPages - BOX_HEIGHT) * (page - 1) + BOX_HEIGHT)
+      setScrollPos((BOX_HEIGHT * 0.4) * (page - 1)+ BOX_HEIGHT) 
     }
   }
   return (

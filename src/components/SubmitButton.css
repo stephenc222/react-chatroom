@@ -7,15 +7,15 @@
 .submit-button--progress {
   display: inline-block;
   border: none;
-  height: 83px;
-  width: 85px;
-  margin-right: 27px;
   margin: 0;
   text-decoration: none;
   background: url(../assets/SendProgressIcon.svg);
   color: #ffffff;
   font-family: sans-serif;
   font-size: 1rem;
+  height: 83px;
+  width: 85px;
+  margin-right: 27px;
   cursor: pointer;
   text-align: center;
   -webkit-appearance: none;

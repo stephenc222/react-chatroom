@@ -1,11 +1,10 @@
 import React from 'react'
 import './SubmitButton.css'
 
-const SubmitButton: React.FunctionComponent = () => {
+const SubmitButton: React.FunctionComponent<{pending: boolean}> = ({pending}) => {
   return (
     <div className='submit-button-container'>
-      {/* <button className='submit-button--progress' type='submit'/> */}
-      <button className='submit-button' type='submit'/>
+      <button className={pending ? 'submit-button--progress' : 'submit-button'} type='submit'/>
     </div>
   )
 }

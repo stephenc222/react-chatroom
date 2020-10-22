@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import MessageList from '../MessageList'
 import MessageInput from '../MessageInput'
 import StatusDropdown from '../StatusDropdown'
@@ -11,18 +11,31 @@ const USER: string = 'jackAttack64'
 
 const ChatBox = () => {
   const [message, setMessage] = useState('')
+  const [pending, setPending] = useState(false)
   const [status, setStatus] = useState('Eating Pizza')
   const [messageList, setMessageList] = useState([] as Message[])
+
+  useEffect(() => {
+    const messageListCopy = messageList.slice()
+    for(let i = 0; i < 10; ++i) {
+      messageListCopy.push({ user: USER, text: 'this is a test message: ' + i})
+    }
+    setMessageList(messageListCopy)
+  }, [])
 
   const onSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault()
     if (!message) {
       return
     }
-    const nextMessageList: Message[] = messageList.slice()
-    nextMessageList.push({ user: USER, text: message})
-    setMessageList(nextMessageList)
-    setMessage('')
+    setPending(true)
+    setTimeout(() => {
+      const nextMessageList: Message[] = messageList.slice()
+      nextMessageList.push({ user: USER, text: message})
+      setMessageList(nextMessageList)
+      setMessage('')
+      setPending(false)
+    }, 1000)
   }
   const onStatusDropdownClick = () => console.log('onstatus click')
   const onChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
@@ -40,7 +53,7 @@ const ChatBox = () => {
         <MessageList messageList={messageList} />
         <Form onSubmit={onSubmit}>
           <MessageInput message={message} onChange={onChange}/>
-          <SubmitButton/>
+          <SubmitButton pending={pending}/>
         </Form>
       </div>
     </div>
