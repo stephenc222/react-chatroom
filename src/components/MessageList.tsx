@@ -19,7 +19,7 @@ const MessageListScrollBar: React.FunctionComponent<{y: number, onUpArrowClick: 
     <div  className='message-list-scrollbar'>
       <div style={{display: 'flex', flexDirection: 'column', justifyContent: 'space-between', height: '100%', width: '100%', position: 'relative'}}>
         <ArrowButton buttonBoxStyle={{top: 0 }} arrowType='up' onClick={onUpArrowClick}/>
-          <div style={{position: 'absolute', zIndex: 2, top: scrollPos, width: '100%'}}>
+          <div style={{position: 'absolute', top: scrollPos, width: '100%'}}>
             <ButtonBox buttonBoxStyle={{height: 9 }} />
           </div>
         <ArrowButton buttonBoxStyle={{top: y, position: 'absolute'}} arrowType='down' onClick={onDownArrowClick} />

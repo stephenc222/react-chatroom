@@ -38,3 +38,8 @@
   -webkit-appearance: none;
   -moz-appearance: none;
 }
+
+.submit-button:focus {
+  box-shadow: 0 0 0 2px blue;
+  border-radius: 3px;
+}
